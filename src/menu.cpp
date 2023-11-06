@@ -1,15 +1,13 @@
-#include <SFML/Window/Keyboard.hpp>
 #include "../includes/menu.h"
 
-// void menu(sf::RenderWindow *window)
+// game::Menu::Menu(sf::RenderWindow *window)
 // {
-//     sf::Font gameFont;
+//     this->window = window;
+// 	sf::Font gameFont;
 
 //     if(!gameFont.loadFromFile("/Users/debbieelliott/Developer/Snake/font/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf"))
 //         printf("font error");
 //     sf::Text welcomeMessage;
-
-//     welcomeMessage.draw();
 
 //     welcomeMessage.setFont(gameFont);
 //     welcomeMessage.setString("Welcome");
