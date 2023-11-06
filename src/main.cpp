@@ -2,29 +2,13 @@
 #include <SFML/Window.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include "../includes/window.h"
-
-
-void menu(sf::RenderWindow *window)
-{
-    sf::Font gameFont;
-
-    if(!gameFont.loadFromFile("/Users/debbieelliott/Developer/Snake/font/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf"))
-        printf("font error");
-    sf::Text welcomeMessage;
-
-    welcomeMessage.setFont(gameFont);
-    welcomeMessage.setString("Welcome");
-    welcomeMessage.setCharacterSize(48);
-    welcomeMessage.setFillColor(sf::Color::White);
-    welcomeMessage.setPosition((WIDTH)/2, HEIGHT/2);
-
-    window->draw(welcomeMessage);
-}
+#include "../includes/snake.h"
 
 int main()
 {
     auto window = sf::RenderWindow{ { WIDTH, HEIGHT }, "Snake", sf::Style::Default};
     window.setFramerateLimit(144);
+    game::Snake snake(&window);
 
     while (window.isOpen())
     {
@@ -34,9 +18,17 @@ int main()
             {
                 window.close();
             }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+                snake.setDirection(-1, 0);
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+                snake.setDirection(1, 0);
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+                snake.setDirection(0, -1);
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+                snake.setDirection(0, 1);
         }
         window.clear(sf::Color::Black);
-        menu(&window);
+        snake.drawSnake();
         window.display();
     }
 }
