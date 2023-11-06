@@ -15,7 +15,7 @@ game::Snake::Snake(sf::RenderWindow *window)
 	colorBody = sf::Color::Blue;
 	colorHead = sf::Color::Yellow;
 	scale = 5;
-	screen = window;
+	this->window = window;
 
 
 	//body.push_back(getRectangleAt(sf::Vector2f(start), colorHead));
@@ -24,7 +24,7 @@ game::Snake::Snake(sf::RenderWindow *window)
 void game::Snake::drawSnake()
 {
 	updateSnake();
-	screen->draw(getRectangleAt(head, colorHead));
+	this->window->draw(getRectangleAt(head, colorHead));
 }
 
 void game::Snake::setDirection(int x, int y)

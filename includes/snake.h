@@ -15,7 +15,7 @@ namespace game {
 		void setDirection(int x, int y);
 		void updateSnake();
 	private:
-		sf::RenderWindow *screen;
+		sf::RenderWindow *window;
 
 		/*snake details*/
 		int length;
