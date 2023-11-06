@@ -29,6 +29,8 @@ int main()
         window.clear(sf::Color::Black);
         food.drawFood();
         snake.drawSnake();
+        if (snake.checkCollision(food.getLocation()))
+            food.setRandomLocation();
         window.display();
     }
 }

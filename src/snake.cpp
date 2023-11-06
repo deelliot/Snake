@@ -15,7 +15,7 @@ game::Snake::Snake(sf::RenderWindow *window)
 void game::Snake::drawSnake()
 {
 	updateSnake();
-	this->window->draw(getRectangleAt(head, colorHead));
+	this->window->draw(setBox(head, colorHead));
 }
 
 void game::Snake::setDirection(int x, int y)
@@ -28,4 +28,17 @@ void game::Snake::updateSnake()
 {
 	head.x += direction.x * scale;
 	head.y += direction.y * scale;
+}
+
+bool game::Snake::checkCollision(sf::Vector2f objectPosition)
+{
+	sf::RectangleShape snakeHead;
+	sf::RectangleShape object;
+
+	snakeHead.setPosition(head);
+	snakeHead.setSize(sf::Vector2f(BOX_SIZE,BOX_SIZE));
+	object.setPosition(objectPosition);
+	object.setSize(sf::Vector2f(BOX_SIZE,BOX_SIZE));
+
+	return(snakeHead.getGlobalBounds().intersects(object.getGlobalBounds()));
 }

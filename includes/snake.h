@@ -14,6 +14,7 @@ namespace game
 		void drawSnake();
 		void setDirection(int x, int y);
 		void updateSnake();
+		bool checkCollision(sf::Vector2f foodLocation);
 	private:
 		sf::RenderWindow *window;
 		/*snake details*/

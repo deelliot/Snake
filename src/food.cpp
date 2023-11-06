@@ -5,10 +5,10 @@ game::Food::Food(sf::RenderWindow *window)
 	foodColor = sf::Color::Red;
 	this->window = window;
 	srand(time(0));
-	foodLocation();
+	setRandomLocation();
 }
 
-void game::Food::foodLocation()
+void game::Food::setRandomLocation()
 {
 	location.x = randomNumber(WIDTH - 1);
 	location.y = randomNumber(HEIGHT - 1);
@@ -25,5 +25,10 @@ int game::Food::randomNumber(int upperLimit)
 
 void game::Food::drawFood()
 {
-	this->window->draw(getRectangleAt(location, foodColor));
+	this->window->draw(setBox(location, foodColor));
+}
+
+sf::Vector2f game::Food::getLocation()
+{
+	return (location);
 }
