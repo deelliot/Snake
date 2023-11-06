@@ -1,6 +1,7 @@
 #include "../includes/utils.h"
 #include "../includes/snake.h"
 #include "../includes/food.h"
+#include <SFML/System/Time.hpp>
 
 int main()
 {
@@ -30,7 +31,13 @@ int main()
         food.drawFood();
         snake.drawSnake();
         if (snake.checkCollision(food.getLocation()))
+        {
             food.setRandomLocation();
+            snake.growSnake();
+        }
+        if (snake.checkWindowCollision())
+            window.clear(sf::Color::Yellow);
         window.display();
+        sf::sleep(sf::milliseconds(100));
     }
 }
