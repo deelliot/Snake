@@ -3,10 +3,10 @@
 
 #include <SFML/Graphics/VertexArray.hpp>
 #include <SFML/Graphics.hpp>
+#include "utils.h"
 
-#define BOX_SIZE 20
-
-namespace game {
+namespace game
+{
 	class Snake
 	{
 	public:
@@ -16,7 +16,6 @@ namespace game {
 		void updateSnake();
 	private:
 		sf::RenderWindow *window;
-
 		/*snake details*/
 		int length;
 		sf::Vector2f head = {0, 0};

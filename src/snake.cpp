@@ -1,20 +1,11 @@
 #include "../includes/snake.h"
 
-sf::RectangleShape getRectangleAt( sf::Vector2f location, sf::Color color )
-	{
-		sf::RectangleShape box;
-		box.setSize(sf::Vector2f(BOX_SIZE,BOX_SIZE));
-		box.setPosition(location);
-		box.setFillColor(color);
-		return box;
-	}
-
 game::Snake::Snake(sf::RenderWindow *window)
 {
 	length = 1;
 	colorBody = sf::Color::Blue;
 	colorHead = sf::Color::Yellow;
-	scale = 5;
+	scale = 2;
 	this->window = window;
 
 
@@ -35,6 +26,6 @@ void game::Snake::setDirection(int x, int y)
 
 void game::Snake::updateSnake()
 {
-	head.x += direction.x;
-	head.y += direction.y;
+	head.x += direction.x * scale;
+	head.y += direction.y * scale;
 }

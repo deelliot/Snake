@@ -1,14 +1,13 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Window/Keyboard.hpp>
-#include "../includes/window.h"
+#include "../includes/utils.h"
 #include "../includes/snake.h"
+#include "../includes/food.h"
 
 int main()
 {
     auto window = sf::RenderWindow{ { WIDTH, HEIGHT }, "Snake", sf::Style::Default};
     window.setFramerateLimit(144);
     game::Snake snake(&window);
+    game::Food food(&window);
 
     while (window.isOpen())
     {
@@ -28,6 +27,7 @@ int main()
                 snake.setDirection(0, 1);
         }
         window.clear(sf::Color::Black);
+        food.drawFood();
         snake.drawSnake();
         window.display();
     }
