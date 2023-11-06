@@ -10,8 +10,8 @@ game::Food::Food(sf::RenderWindow *window)
 
 void game::Food::setRandomLocation()
 {
-	location.x = randomNumber(WIDTH - 1);
-	location.y = randomNumber(HEIGHT - 1);
+	location.x = randomNumber(WIDTH/SCALE) * SCALE;
+	location.y = randomNumber(HEIGHT/SCALE) * SCALE;
 }
 
 /* returns a random number between 0 and the upperlimit*/
