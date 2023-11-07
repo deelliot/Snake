@@ -14,6 +14,19 @@ void game::Menu::drawMenu()
 	// window->draw();
 }
 
+// void game::Menu::startGame()
+// {
+//     if (mousePos.x>currentSpr->GetPosition().x
+// 		&& mousePos.x<(currentSpr->GetPosition().x + currentSpr->GetSize().x))
+// 		{
+//         	if(mousePos.y>currentSpr->GetPosition().y &&
+// 			mousePos.y<(currentSpr->GetPosition().y + currentSpr->GetSize().y))
+// 			{
+//             	setState(!current);
+// 			}
+// 		}
+// }
+
 void game::Menu::drawStartScreen()
 {
 	sf::RectangleShape border = createMenuBorder(sf::Color(0,154,23));

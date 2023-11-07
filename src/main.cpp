@@ -21,14 +21,7 @@ int main()
             {
                 window.close();
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-                snake.setDirection(-1, 0);
-            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-                snake.setDirection(1, 0);
-            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-                snake.setDirection(0, -1);
-            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-                snake.setDirection(0, 1);
+            snake.onKeyPressed();
         }
         window.clear(sf::Color::Black);
         if (gameState)

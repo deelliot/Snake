@@ -10,6 +10,7 @@ namespace game
 		public:
 			Menu(sf::RenderWindow *);
 			void drawMenu();
+			// void startGame();
 			void drawStartScreen();
 			void drawGameOver();
 		private:

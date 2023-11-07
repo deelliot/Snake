@@ -11,13 +11,14 @@ namespace game
 	{
 	public:
 		Snake(sf::RenderWindow *); //CONSTRUCTOR
+		void onKeyPressed();
 		void drawSnake();
-		void setDirection(int x, int y);
 		void growSnake();
 		void updateSnake();
 		bool checkCollision(sf::Vector2f foodLocation);
 		bool checkBodyCollision();
 		bool checkWindowCollision();
+		void setDirection(int x, int y);
 	private:
 		sf::RenderWindow *window;
 		/*snake details*/
@@ -26,7 +27,6 @@ namespace game
 		std::vector<sf::Vector2f> body;
 		sf::Color colorBody;
 		sf::Color colorHead;
-
 		float scale;
 	};
 };
