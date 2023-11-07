@@ -5,14 +5,22 @@
 
 namespace game
 {
+	enum Screen
+	{
+		START,
+		GAME,
+		END
+	};
+
 	class Menu
 	{
 		public:
 			Menu(sf::RenderWindow *);
-			void drawMenu();
-			// void startGame();
 			void drawStartScreen();
 			void drawGameOver();
+			Screen screen;
+
+
 		private:
 			sf::RectangleShape createMenuBorder(sf::Color fillColor);
 			sf::RectangleShape createButtonBorder(sf::Color fillColor,

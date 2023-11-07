@@ -6,6 +6,7 @@ game::Snake::Snake(sf::RenderWindow *window)
 	colorHead = sf::Color::Yellow;
 	scale = SCALE;
 	this->window = window;
+	resetSnake();
 }
 
 void game::Snake::setDirection(int x, int y)
@@ -14,7 +15,7 @@ void game::Snake::setDirection(int x, int y)
 	direction.y = y;
 }
 
-void game::Snake::onKeyPressed()
+void game::Snake::handleInput()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && direction.x != 1)
 		setDirection(-1, 0);
@@ -24,6 +25,7 @@ void game::Snake::onKeyPressed()
 		setDirection(0, -1);
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && direction.y != -1)
 		setDirection(0, 1);
+
 }
 
 void game::Snake::growSnake()
@@ -59,6 +61,14 @@ void game::Snake::drawSnake()
 	{
 		this->window->draw(setBox(body[i++], colorBody));
 	}
+}
+
+void game::Snake::resetSnake()
+{
+	head = {WIDTH/2, 0};
+	direction = {0,1};
+	body.clear();
+
 }
 
 bool game::Snake::checkCollision(sf::Vector2f objectPosition)

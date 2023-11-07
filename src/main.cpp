@@ -11,7 +11,6 @@ int main()
     game::Snake snake(&window);
     game::Food food(&window);
     game::Menu menu(&window);
-    bool gameState = true;
 
     while (window.isOpen())
     {
@@ -21,15 +20,22 @@ int main()
             {
                 window.close();
             }
-            snake.onKeyPressed();
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		        menu.screen = game::GAME;
+            snake.handleInput();
         }
         window.clear(sf::Color::Black);
-        if (gameState)
+        if (menu.screen == game::START)
+            menu.drawStartScreen();
+        else if (menu.screen == game::GAME)
         {
             food.drawFood();
             snake.drawSnake();
             if (snake.checkWindowCollision() || snake.checkBodyCollision())
-               gameState = false;
+            {
+               menu.screen = game::END;
+               snake.resetSnake();
+            }
             if (snake.checkCollision(food.getLocation()))
             {
                 food.setRandomLocation();

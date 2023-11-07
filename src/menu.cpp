@@ -7,31 +7,14 @@ game::Menu::Menu(sf::RenderWindow *window)
         exit(0);
 	if (!optionsFont.loadFromFile("../font/Lato/Lato-LightItalic.ttf"))
 		exit(0);
+	screen = game::Screen::START;
 }
-
-void game::Menu::drawMenu()
-{
-	// window->draw();
-}
-
-// void game::Menu::startGame()
-// {
-//     if (mousePos.x>currentSpr->GetPosition().x
-// 		&& mousePos.x<(currentSpr->GetPosition().x + currentSpr->GetSize().x))
-// 		{
-//         	if(mousePos.y>currentSpr->GetPosition().y &&
-// 			mousePos.y<(currentSpr->GetPosition().y + currentSpr->GetSize().y))
-// 			{
-//             	setState(!current);
-// 			}
-// 		}
-// }
 
 void game::Menu::drawStartScreen()
 {
 	sf::RectangleShape border = createMenuBorder(sf::Color(0,154,23));
 	sf::Text header = createText(headerFont, "SNAKE", 100);
-	sf::Text start = createText(optionsFont, "start", 40);
+	sf::Text start = createText(optionsFont, "Press SPACE to start", 40);
 
 
 	sf::Vector2f headerPosition = {(border.getPosition().x + (border.getSize().x) / 2.f),
@@ -49,12 +32,16 @@ void game::Menu::drawGameOver()
 {
 	sf::RectangleShape border = createMenuBorder(sf::Color::Black);
 	sf::Text header = createText(headerFont, "Game Over", 100);
+	sf::Text restart = createText(optionsFont, "Press SPACE to restart", 40);
 
-    header.setPosition((border.getPosition() + (border.getSize()) / 2.f));
+    sf::Vector2f headerPosition = (border.getPosition() + (border.getSize()) / 2.f);
+	header.setPosition(headerPosition);
+	restart.setPosition({headerPosition.x, headerPosition.y + 100});
 
 	window->clear(sf::Color::Black);
 	window->draw(border);
 	window->draw(header);
+	window->draw(restart);
 }
 
 sf::RectangleShape game::Menu::createMenuBorder(sf::Color fillColor)
