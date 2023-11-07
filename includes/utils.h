@@ -6,7 +6,7 @@
 
 # define WIDTH 800
 # define HEIGHT 600
-#define SCALE 40
+#define SCALE 20
 
 static sf::RectangleShape setBox( sf::Vector2f location, sf::Color color )
 	{

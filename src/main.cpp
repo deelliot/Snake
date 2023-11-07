@@ -36,7 +36,7 @@ int main()
             snake.growSnake();
         }
         if (snake.checkWindowCollision())
-            window.clear(sf::Color::Yellow);
+            window.close();
         window.display();
         sf::sleep(sf::milliseconds(100));
     }

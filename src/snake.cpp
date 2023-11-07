@@ -2,7 +2,6 @@
 
 game::Snake::Snake(sf::RenderWindow *window)
 {
-	length = 0;
 	colorBody = sf::Color::Blue;
 	colorHead = sf::Color::Yellow;
 	scale = SCALE;
@@ -14,7 +13,7 @@ void game::Snake::drawSnake()
 	int i = 0;
 	updateSnake();
 	this->window->draw(setBox(head, colorHead));
-	while (i < length)
+	while (i < body.size())
 	{
 		this->window->draw(setBox(body[i++], colorBody));
 	}
@@ -29,14 +28,14 @@ void game::Snake::setDirection(int x, int y)
 void game::Snake::updateSnake()
 {
 	int i = 0;
-	if (length >= 1)
+	if (body.size() >= 1)
 	{
-		while (i - 1 < length)
+		while (i < body.size() - 1)
 		{
 			body[i] = body[i + 1];
 			i++;
 		}
-		body[length - 1] = {head.x, head.y};
+		body[body.size() - 1] = {head.x, head.y};
 	}
 	head.x += direction.x * scale;
 	head.y += direction.y * scale;
@@ -46,8 +45,6 @@ void game::Snake::growSnake()
 {
 	sf::Vector2f newSegment;
 
-	length += 1;
-	printf("length: %i", length);
 	newSegment = {head.x, head.y};
 	body.push_back(newSegment);
 }
