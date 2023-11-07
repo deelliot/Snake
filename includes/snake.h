@@ -20,7 +20,6 @@ namespace game
 	private:
 		sf::RenderWindow *window;
 		/*snake details*/
-		int length;
 		sf::Vector2f head = {0, 0};
 		sf::Vector2f direction = {0, 0};
 		std::vector<sf::Vector2f> body;
