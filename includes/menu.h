@@ -10,8 +10,13 @@ namespace game
 		public:
 			Menu(sf::RenderWindow *);
 			void drawMenu();
+			void start();
 			void gameOver();
 		private:
+			sf::RectangleShape createMenuBorder(sf::Color fillColor);
+			sf::RectangleShape createButtonBorder(sf::Color fillColor,
+				sf::Vector2f borderSize, sf::Vector2f position);
+			sf::Text createText(sf::Font &font, sf::String string, int size);
 			sf::RenderWindow *window;
 			sf::Font headerFont;
 			sf::Font optionsFont;
