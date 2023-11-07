@@ -9,10 +9,12 @@ namespace game
 	{
 		public:
 			Menu(sf::RenderWindow *);
+			void drawMenu();
+			void gameOver();
 		private:
-		sf::RenderWindow *window;
-
-
+			sf::RenderWindow *window;
+			sf::Font headerFont;
+			sf::Font optionsFont;
 	};
 }
 

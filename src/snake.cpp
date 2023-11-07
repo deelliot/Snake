@@ -8,21 +8,18 @@ game::Snake::Snake(sf::RenderWindow *window)
 	this->window = window;
 }
 
-void game::Snake::drawSnake()
-{
-	int i = 0;
-	updateSnake();
-	this->window->draw(setBox(head, colorHead));
-	while (i < body.size())
-	{
-		this->window->draw(setBox(body[i++], colorBody));
-	}
-}
-
 void game::Snake::setDirection(int x, int y)
 {
 	direction.x = x;
 	direction.y = y;
+}
+
+void game::Snake::growSnake()
+{
+	sf::Vector2f newSegment;
+
+	newSegment = {head.x, head.y};
+	body.push_back(newSegment);
 }
 
 void game::Snake::updateSnake()
@@ -41,12 +38,15 @@ void game::Snake::updateSnake()
 	head.y += direction.y * scale;
 }
 
-void game::Snake::growSnake()
+void game::Snake::drawSnake()
 {
-	sf::Vector2f newSegment;
-
-	newSegment = {head.x, head.y};
-	body.push_back(newSegment);
+	int i = 0;
+	updateSnake();
+	this->window->draw(setBox(head, colorHead));
+	while (i < body.size())
+	{
+		this->window->draw(setBox(body[i++], colorBody));
+	}
 }
 
 bool game::Snake::checkCollision(sf::Vector2f objectPosition)
