@@ -16,12 +16,13 @@ namespace game
 		void growSnake();
 		void updateSnake();
 		bool checkCollision(sf::Vector2f foodLocation);
+		bool checkBodyCollision();
 		bool checkWindowCollision();
 	private:
 		sf::RenderWindow *window;
 		/*snake details*/
-		sf::Vector2f head = {0, 0};
-		sf::Vector2f direction = {0, 0};
+		sf::Vector2f head = {WIDTH/2, 0};
+		sf::Vector2f direction = {0, 1};
 		std::vector<sf::Vector2f> body;
 		sf::Color colorBody;
 		sf::Color colorHead;

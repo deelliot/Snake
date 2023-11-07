@@ -14,7 +14,7 @@ void game::Menu::drawMenu()
 	// window->draw();
 }
 
-void game::Menu::start()
+void game::Menu::drawStartScreen()
 {
 	sf::RectangleShape border = createMenuBorder(sf::Color(0,154,23));
 	sf::Text header = createText(headerFont, "SNAKE", 100);
@@ -32,7 +32,7 @@ void game::Menu::start()
 	window->draw(start);
 }
 
-void game::Menu::gameOver()
+void game::Menu::drawGameOver()
 {
 	sf::RectangleShape border = createMenuBorder(sf::Color::Black);
 	sf::Text header = createText(headerFont, "Game Over", 100);

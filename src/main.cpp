@@ -11,6 +11,7 @@ int main()
     game::Snake snake(&window);
     game::Food food(&window);
     game::Menu menu(&window);
+    bool gameState = true;
 
     while (window.isOpen())
     {
@@ -30,15 +31,20 @@ int main()
                 snake.setDirection(0, 1);
         }
         window.clear(sf::Color::Black);
-        food.drawFood();
-        snake.drawSnake();
-        if (snake.checkCollision(food.getLocation()))
+        if (gameState)
         {
-            food.setRandomLocation();
-            snake.growSnake();
+            food.drawFood();
+            snake.drawSnake();
+            if (snake.checkWindowCollision() || snake.checkBodyCollision())
+               gameState = false;
+            if (snake.checkCollision(food.getLocation()))
+            {
+                food.setRandomLocation();
+                snake.growSnake();
+            }
+        } else {
+            menu.drawGameOver();
         }
-        if (snake.checkWindowCollision())
-            menu.gameOver();
         window.display();
         sf::sleep(sf::milliseconds(100));
     }

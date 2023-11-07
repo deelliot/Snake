@@ -68,3 +68,14 @@ bool game::Snake::checkWindowCollision()
 		return (true);
 	return (false);
 }
+
+bool game::Snake::checkBodyCollision()
+{
+	int i = 0;
+	while (i < body.size())
+	{
+		if (checkCollision(body[i++]))
+			return(true);
+	}
+	return (false);
+}

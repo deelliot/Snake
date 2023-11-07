@@ -10,8 +10,8 @@ namespace game
 		public:
 			Menu(sf::RenderWindow *);
 			void drawMenu();
-			void start();
-			void gameOver();
+			void drawStartScreen();
+			void drawGameOver();
 		private:
 			sf::RectangleShape createMenuBorder(sf::Color fillColor);
 			sf::RectangleShape createButtonBorder(sf::Color fillColor,
