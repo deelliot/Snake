@@ -25,24 +25,28 @@ int main()
             snake.handleInput();
         }
         window.clear(sf::Color::Black);
-        if (menu.screen == game::START)
-            menu.drawStartScreen();
-        else if (menu.screen == game::GAME)
+        switch(menu.screen)
         {
-            food.drawFood();
-            snake.drawSnake();
-            if (snake.checkWindowCollision() || snake.checkBodyCollision())
-            {
-               menu.screen = game::END;
-               snake.resetSnake();
-            }
-            if (snake.checkCollision(food.getLocation()))
-            {
-                food.setRandomLocation();
-                snake.growSnake();
-            }
-        } else {
-            menu.drawGameOver();
+            case game::START:
+                menu.drawStartScreen();
+                break;
+            case game::GAME:
+                food.drawFood();
+                snake.drawSnake();
+                if (snake.checkWindowCollision() || snake.checkBodyCollision())
+                {
+                    menu.screen = game::END;
+                    snake.resetSnake();
+                }
+                if (snake.checkCollision(food.getLocation()))
+                {
+                    food.setRandomLocation();
+                    snake.growSnake();
+                }
+                break;
+            default:
+                menu.drawGameOver();
+                break;
         }
         window.display();
         sf::sleep(sf::milliseconds(100));
