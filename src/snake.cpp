@@ -2,8 +2,8 @@
 
 game::Snake::Snake(sf::RenderWindow *window)
 {
-	colorBody = sf::Color::Blue;
-	colorHead = sf::Color::Yellow;
+	colorBody = sf::Color(44,67,23);
+	colorHead = sf::Color(235, 234, 152);
 	scale = SCALE;
 	this->window = window;
 	resetSnake();

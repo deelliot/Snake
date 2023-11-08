@@ -18,7 +18,7 @@ void game::Menu::changeScore()
 
 void game::Menu::drawStartScreen()
 {
-	sf::RectangleShape border = createMenuBorder(sf::Color(0,154,23));
+	sf::RectangleShape border = createMenuBorder(sf::Color(44,67,23));
 	sf::Text header = createText(headerFont, "SNAKE", 100);
 	sf::Text start = createText(optionsFont, "Press SPACE to start", 40);
 
@@ -45,7 +45,7 @@ void game::Menu::drawGameScreen()
 
 	border.setOutlineColor(sf::Color::White);
 	border.setOutlineThickness(8.f);
-	border.setFillColor(sf::Color(0,154,23));
+	border.setFillColor(sf::Color(178, 179, 150));
 	border.setSize(borderSize);
 	border.setPosition(sf::Vector2f(WIDTH/2 - borderSize.x/2,
 		HEIGHT/2 - borderSize.y/2));
@@ -59,7 +59,7 @@ void game::Menu::drawGameScreen()
 
 void game::Menu::drawPauseScreen()
 {
-	sf::RectangleShape border = createMenuBorder(sf::Color(110, 24, 163));
+	sf::RectangleShape border = createMenuBorder(sf::Color(174, 180, 203));
 	sf::Text header = createText(headerFont, "Paused", 100);
 	sf::Text restart = createText(optionsFont, "Press SPACE to restart", 40);
 

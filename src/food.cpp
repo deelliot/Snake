@@ -2,7 +2,7 @@
 
 game::Food::Food(sf::RenderWindow *window)
 {
-	foodColor = sf::Color::Red;
+	foodColor = sf::Color(112, 93, 64);
 	this->window = window;
 	srand(time(0));
 	setRandomLocation();

@@ -20,11 +20,12 @@ int main()
             {
                 window.close();
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+             if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Space)
+            // if (sf::Keyboard::isKeyReleased(sf::Keyboard::Space))
             {
-		        // if (menu.screen == game::GAME)
-                //     menu.screen = game::PAUSE;
-                // else
+		        if (menu.screen == game::GAME)
+                    menu.screen = game::PAUSE;
+                else
                     menu.screen = game::GAME;
             }
             snake.handleInput();
