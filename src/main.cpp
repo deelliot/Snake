@@ -38,8 +38,6 @@ int main()
                 break;
             case game::GAME:
                 menu.drawGameScreen();
-                food.drawFood();
-                snake.drawSnake();
                 if (snake.checkWindowCollision() || snake.checkBodyCollision())
                 {
                     menu.screen = game::END;
@@ -51,6 +49,9 @@ int main()
                     menu.changeScore();
                     snake.growSnake();
                 }
+                food.drawFood();
+                snake.drawSnake();
+                snake.updateSnake();
                 break;
             case game::PAUSE:
                 menu.drawPauseScreen();

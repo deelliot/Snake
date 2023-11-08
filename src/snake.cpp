@@ -54,7 +54,6 @@ void game::Snake::updateSnake()
 void game::Snake::drawSnake()
 {
 	int i = 0;
-	updateSnake();
 	this->window->draw(setBox(head, colorHead));
 	while (i < body.size())
 	{
@@ -85,8 +84,8 @@ bool game::Snake::checkCollision(sf::Vector2f objectPosition)
 
 bool game::Snake::checkWindowCollision()
 {
-	if ((head.x < WIDTH_OFFSET || head.x > GAME_WIDTH + WIDTH_OFFSET -20 ) ||
-		(head.y < HEIGHT_OFFSET || head.y > GAME_HEIGHT + HEIGHT_OFFSET - 20))
+	if ((head.x < WIDTH_OFFSET || head.x > GAME_WIDTH + WIDTH_OFFSET -SCALE) ||
+		(head.y < HEIGHT_OFFSET || head.y > GAME_HEIGHT + HEIGHT_OFFSET - SCALE))
 		return (true);
 	return (false);
 }
