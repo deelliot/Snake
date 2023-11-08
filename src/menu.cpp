@@ -28,6 +28,24 @@ void game::Menu::drawStartScreen()
 	window->draw(start);
 }
 
+void game::Menu::drawGameScreen()
+{
+	sf::RectangleShape border = createMenuBorder(sf::Color(0,154,23));
+	// sf::Text header = createText(headerFont, "SNAKE", 100);
+	// sf::Text start = createText(optionsFont, "Press SPACE to start", 40);
+
+
+	// sf::Vector2f headerPosition = {(border.getPosition().x + (border.getSize().x) / 2.f),
+	// 	(border.getPosition().y + (border.getSize().y) / 3.f)};
+    // header.setPosition(headerPosition);
+	// start.setPosition({headerPosition.x, headerPosition.y + 100});
+
+	//window->clear(sf::Color::Black);
+	window->draw(border);
+	// window->draw(header);
+	// window->draw(start);
+}
+
 void game::Menu::drawGameOver()
 {
 	sf::RectangleShape border = createMenuBorder(sf::Color::Black);

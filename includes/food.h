@@ -16,7 +16,7 @@ namespace game
 			void setRandomLocation();
 			sf::Vector2f getLocation();
 		private:
-			int randomNumber(int upperLimit);
+			int randomNumber(int lowerLimit, int upperLimit);
 			sf::RenderWindow *window;
 			sf::Vector2f location;
 			sf::Color foodColor;

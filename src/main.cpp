@@ -31,6 +31,7 @@ int main()
                 menu.drawStartScreen();
                 break;
             case game::GAME:
+                menu.drawGameScreen();
                 food.drawFood();
                 snake.drawSnake();
                 if (snake.checkWindowCollision() || snake.checkBodyCollision())

@@ -65,7 +65,7 @@ void game::Snake::drawSnake()
 
 void game::Snake::resetSnake()
 {
-	head = {WIDTH/2, 0};
+	head = {WIDTH/2, HEIGHT - GAME_HEIGHT};
 	direction = {0,1};
 	body.clear();
 
@@ -86,7 +86,8 @@ bool game::Snake::checkCollision(sf::Vector2f objectPosition)
 
 bool game::Snake::checkWindowCollision()
 {
-	if ((head.x < 0 || head.x > WIDTH - 1) || (head.y < 0 || head.y > HEIGHT - 1))
+	if ((head.x < WIDTH_OFFSET || head.x > GAME_WIDTH + WIDTH_OFFSET - 1) ||
+		(head.y < HEIGHT_OFFSET - 5 || head.y > GAME_HEIGHT + HEIGHT_OFFSET))
 		return (true);
 	return (false);
 }

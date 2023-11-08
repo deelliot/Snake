@@ -17,6 +17,7 @@ namespace game
 		public:
 			Menu(sf::RenderWindow *);
 			void drawStartScreen();
+			void drawGameScreen();
 			void drawGameOver();
 			Screen screen;
 
