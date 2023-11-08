@@ -1,6 +1,5 @@
 #ifndef MENU_H
 # define MENU_H
-#include <SFML/Graphics.hpp>
 #include "utils.h"
 
 namespace game
@@ -9,6 +8,7 @@ namespace game
 	{
 		START,
 		GAME,
+		PAUSE,
 		END
 	};
 
@@ -18,7 +18,9 @@ namespace game
 			Menu(sf::RenderWindow *);
 			void drawStartScreen();
 			void drawGameScreen();
+			void drawPauseScreen();
 			void drawGameOver();
+			void changeScore();
 			Screen screen;
 
 
@@ -30,6 +32,7 @@ namespace game
 			sf::RenderWindow *window;
 			sf::Font headerFont;
 			sf::Font optionsFont;
+			int score;
 	};
 }
 

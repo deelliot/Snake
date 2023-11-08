@@ -25,7 +25,6 @@ void game::Snake::handleInput()
 		setDirection(0, -1);
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && direction.y != -1)
 		setDirection(0, 1);
-
 }
 
 void game::Snake::growSnake()
@@ -86,8 +85,8 @@ bool game::Snake::checkCollision(sf::Vector2f objectPosition)
 
 bool game::Snake::checkWindowCollision()
 {
-	if ((head.x < WIDTH_OFFSET || head.x > GAME_WIDTH + WIDTH_OFFSET - 1) ||
-		(head.y < HEIGHT_OFFSET - 5 || head.y > GAME_HEIGHT + HEIGHT_OFFSET))
+	if ((head.x < WIDTH_OFFSET || head.x > GAME_WIDTH + WIDTH_OFFSET -20 ) ||
+		(head.y < HEIGHT_OFFSET || head.y > GAME_HEIGHT + HEIGHT_OFFSET - 20))
 		return (true);
 	return (false);
 }

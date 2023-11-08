@@ -11,9 +11,9 @@ game::Food::Food(sf::RenderWindow *window)
 void game::Food::setRandomLocation()
 {
 
-	int xLowerLimit = floor(WIDTH_OFFSET - 5 / SCALE);
+	int xLowerLimit = floor(WIDTH_OFFSET / SCALE);
 	int yLowerLimit = floor(HEIGHT_OFFSET / SCALE);
-	int xUpperLimit = floor((GAME_WIDTH + WIDTH_OFFSET)/  SCALE);
+	int xUpperLimit = floor((GAME_WIDTH + WIDTH_OFFSET)/ SCALE);
 	int yUpperLimit = floor((GAME_HEIGHT + HEIGHT_OFFSET) / SCALE);
 
 

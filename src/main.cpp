@@ -21,7 +21,12 @@ int main()
                 window.close();
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-		        menu.screen = game::GAME;
+            {
+		        // if (menu.screen == game::GAME)
+                //     menu.screen = game::PAUSE;
+                // else
+                    menu.screen = game::GAME;
+            }
             snake.handleInput();
         }
         window.clear(sf::Color::Black);
@@ -42,8 +47,12 @@ int main()
                 if (snake.checkCollision(food.getLocation()))
                 {
                     food.setRandomLocation();
+                    menu.changeScore();
                     snake.growSnake();
                 }
+                break;
+            case game::PAUSE:
+                menu.drawPauseScreen();
                 break;
             default:
                 menu.drawGameOver();

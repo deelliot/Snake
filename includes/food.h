@@ -1,10 +1,7 @@
 #ifndef FOOD_H
 # define FOOD_H
 
-#include <SFML/Graphics.hpp>
-#include <stdlib.h>
 #include "utils.h"
-#include <ctime>
 
 namespace game
 {
