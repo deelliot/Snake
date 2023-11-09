@@ -23,41 +23,42 @@ The Snake Game is a timeless classic where players control a snake to eat food a
 
 2. **Pause Screen**: Pause the game at any time to take a break or strategize your next move.
 
-3. **Rolling High Score**: Track your performance with a rolling high score that persists across game sessions.
+3. **Rolling High Score**: Track your performance with a rolling high score.
 
 ## Getting Started
 
 Clone the repository to your local machine. The project uses the [CMake SFML Project Template](https://github.com/SFML/cmake-sfml-project), which means you don't need to have SFML pre-installed unless you're a Linux user.
 
+For Linux users, ensure you have SFML installed on your system.
+
 Follow the building and running instructions in the next section.
+
+## Game Modes
+
+### Classic Mode
+
+The traditional Snake Game experience. Eat food, grow longer, and try to achieve the highest score possible.
+
+### Time Attack Mode
+
+Test your skills against the clock. Race to eat as much food as possible within a limited time.
+
+### Obstacle Mode
+
+Navigate through a maze of obstacles while trying to grow your snake. Avoid collisions to survive and thrive.
 
 ## Pause Screen
 
 Press the designated pause key during gameplay to pause the game and take a break. The pause screen provides options to resume the game or return to the main menu.
 
+## Rolling High Score
+
+The game keeps track of your performance with a rolling high score. Your highest score achieved across all game modes in the current session is displayed on the main menu.
+
 ## ToDo
 
-- **Implement the Different Game Modes**: As described below:
-
-	## Game Modes
-
-	### Classic Mode
-
-	The traditional Snake Game experience. Eat food, grow longer, and try to achieve the highest score possible.
-
-	### Time Attack Mode
-
-	Test your skills against the clock. Race to eat as much food as possible within a limited time.
-
-	### Obstacle Mode
-
-	Navigate through a maze of obstacles while trying to grow your snake. Avoid collisions to survive and thrive.
-
-- **Rolling High Score Logic**:
-
-	## Rolling High Score
-
-	The game keeps track of your performance with a rolling high score. Your highest score achieved across all game modes is persistently displayed on the main menu.
+- **Implement the Different Game Modes**: As described above
+- **Implement Rolling High Score Logic**
 
 ## Building and Running
 
@@ -93,4 +94,4 @@ Run the game executable:
 ./build/bin/snake
 ```
 
-Now, you're ready to enjoy the Snake Game! If you encounter any issues or have feedback, feel free to reach out.
+Now, you're ready to enjoy the Snake Game! If you encounter any issues or have feedback, feel free to reach out to the developers.
