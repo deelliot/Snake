@@ -17,22 +17,14 @@ int main()
             {
                 window.close();
             }
-            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Space)
-            {
-		        if (game.screen == game::GAME)
-                    game.screen = game::PAUSE;
-                else
-                    game.screen = game::GAME;
-
-            }
-            game.handleInput();
+            game.handleInput(event.type, event.key.code);
         }
         window.clear(sf::Color::Black);
 
         if (clock.getElapsedTime() >= nextTickTime)
         {
             game.update();
-            nextTickTime = clock.getElapsedTime() + sf::milliseconds(100);
+            nextTickTime = clock.getElapsedTime() + sf::milliseconds(50);
 
         }
         game.draw();

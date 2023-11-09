@@ -9,9 +9,26 @@ game::Game::Game(sf::RenderWindow *window)
     screen = game::Screen::START;
 }
 
-void game::Game::handleInput()
+void game::Game::handleInput(sf::Event::EventType eventType, int key)
 {
-	snake.handleInput();
+    if (eventType == sf::Event::KeyReleased && key == sf::Keyboard::Space)
+	{
+		if (screen == game::GAME)
+				screen = game::PAUSE;
+		else
+			screen = game::GAME;
+	}
+    else if (eventType == sf::Event::KeyPressed)
+    {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && snake.getDirection().x != 1)
+            snake.setDirection(-1, 0);
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)&& snake.getDirection().x != -1)
+            snake.setDirection(1, 0);
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)&& snake.getDirection().y != 1)
+            snake.setDirection(0, -1);
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && snake.getDirection().y != -1)
+            snake.setDirection(0, 1);
+    }
 }
 
 void game::Game::draw()

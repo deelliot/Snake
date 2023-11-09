@@ -25,7 +25,7 @@ namespace game
 		void draw();
 		void update();
 		Screen screen;
-		void handleInput();
+		void handleInput(sf::Event::EventType eventType, int key);
 
 	private:
 		sf::RenderWindow *window;

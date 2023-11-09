@@ -15,16 +15,9 @@ void game::Snake::setDirection(int x, int y)
 	direction.y = y;
 }
 
-void game::Snake::handleInput()
+sf::Vector2f game::Snake::getDirection()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && direction.x != 1)
-		setDirection(-1, 0);
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)&& direction.x != -1)
-		setDirection(1, 0);
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)&& direction.y != 1)
-		setDirection(0, -1);
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && direction.y != -1)
-		setDirection(0, 1);
+	return (direction);
 }
 
 void game::Snake::growSnake()

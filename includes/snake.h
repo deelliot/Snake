@@ -12,7 +12,6 @@ namespace game
 	public:
 		Snake(){};
 		Snake(sf::RenderWindow *); //CONSTRUCTOR
-		void handleInput();
 		void drawSnake();
 		void growSnake();
 		void updateSnake();
@@ -20,6 +19,7 @@ namespace game
 		bool checkBodyCollision();
 		bool checkWindowCollision();
 		void setDirection(int x, int y);
+		sf::Vector2f getDirection();
 		void resetSnake();
 	private:
 		sf::RenderWindow *window;
