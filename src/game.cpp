@@ -14,8 +14,7 @@ void game::Game::handleInput()
 	snake.handleInput();
 }
 
-
-void game::Game::play()
+void game::Game::draw()
 {
     switch(screen)
         {
@@ -24,20 +23,8 @@ void game::Game::play()
                 break;
             case game::GAME:
                 menu.drawGameScreen();
-                if (snake.checkWindowCollision() || snake.checkBodyCollision())
-                {
-                    screen = game::END;
-                    snake.resetSnake();
-                }
-                if (snake.checkCollision(food.getLocation()))
-                {
-                    food.setRandomLocation();
-                    menu.changeScore();
-                    snake.growSnake();
-                }
                 food.drawFood();
                 snake.drawSnake();
-                snake.updateSnake();
                 break;
             case game::PAUSE:
                 menu.drawPauseScreen();
@@ -46,4 +33,24 @@ void game::Game::play()
                 menu.drawGameOver();
                 break;
         }
+}
+
+void game::Game::update()
+{
+
+    if (screen == GAME)
+    {
+        if (snake.checkWindowCollision() || snake.checkBodyCollision())
+        {
+            screen = game::END;
+            snake.resetSnake();
+        }
+        if (snake.checkCollision(food.getLocation()))
+        {
+            food.setRandomLocation();
+            menu.changeScore();
+            snake.growSnake();
+        }
+        snake.updateSnake();
+    }
 }

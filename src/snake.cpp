@@ -84,8 +84,10 @@ bool game::Snake::checkCollision(sf::Vector2f objectPosition)
 
 bool game::Snake::checkWindowCollision()
 {
-	if ((head.x < WIDTH_OFFSET || head.x > GAME_WIDTH + WIDTH_OFFSET -SCALE) ||
-		(head.y < HEIGHT_OFFSET || head.y > GAME_HEIGHT + HEIGHT_OFFSET - SCALE))
+	if ((head.x + direction.x < WIDTH_OFFSET ||
+		head.x + direction.x > GAME_WIDTH + WIDTH_OFFSET - SCALE) ||
+		(head.y + direction.y < HEIGHT_OFFSET ||
+		head.y + direction.y > GAME_HEIGHT + HEIGHT_OFFSET - SCALE))
 		return (true);
 	return (false);
 }

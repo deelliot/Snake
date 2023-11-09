@@ -22,7 +22,8 @@ namespace game
 	{
 	public:
 		Game(sf::RenderWindow *);
-		void play();
+		void draw();
+		void update();
 		Screen screen;
 		void handleInput();
 
