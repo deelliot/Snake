@@ -63,8 +63,9 @@ void game::Menu::drawPauseScreen()
 	sf::Text header = createText(headerFont, "Paused", 100);
 	sf::Text restart = createText(optionsFont, "Press SPACE to restart", 40);
 
-    sf::Vector2f headerPosition = (border.getPosition() +
-		(border.getSize()) / 2.f);
+    sf::Vector2f headerPosition = {(border.getPosition().x +
+		(border.getSize().x) / 2.f),(border.getPosition().y +
+			(border.getSize().y) / 3.f)};
 	header.setPosition(headerPosition);
 	restart.setPosition({headerPosition.x, headerPosition.y + 100});
 
