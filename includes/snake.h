@@ -10,6 +10,7 @@ namespace game
 	class Snake
 	{
 	public:
+		Snake(){};
 		Snake(sf::RenderWindow *); //CONSTRUCTOR
 		void handleInput();
 		void drawSnake();

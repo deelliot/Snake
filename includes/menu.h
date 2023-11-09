@@ -4,24 +4,25 @@
 
 namespace game
 {
-	enum Screen
-	{
-		START,
-		GAME,
-		PAUSE,
-		END
-	};
+	// enum Screen
+	// {
+	// 	START,
+	// 	GAME,
+	// 	PAUSE,
+	// 	END
+	// };
 
 	class Menu
 	{
 		public:
+			Menu(){};
 			Menu(sf::RenderWindow *);
 			void drawStartScreen();
 			void drawGameScreen();
 			void drawPauseScreen();
 			void drawGameOver();
 			void changeScore();
-			Screen screen;
+			//Screen screen;
 
 
 		private:

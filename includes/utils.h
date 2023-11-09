@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <string>
+#include <SFML/System/Time.hpp>
 
 # define WIDTH 800
 # define HEIGHT 600

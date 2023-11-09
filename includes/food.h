@@ -8,6 +8,7 @@ namespace game
 	class Food
 	{
 		public:
+			Food(){};
 			Food(sf::RenderWindow *);
 			void drawFood();
 			void setRandomLocation();

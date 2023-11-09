@@ -3,11 +3,11 @@
 game::Menu::Menu(sf::RenderWindow *window)
 {
     this->window = window;
-    if(!headerFont.loadFromFile("../font/headerFont/TechnoRaceItalic.otf"))
+    if(!headerFont.loadFromFile("font/headerFont/TechnoRaceItalic.otf"))
         exit(0);
-	if (!optionsFont.loadFromFile("../font/Lato/Lato-LightItalic.ttf"))
+	if (!optionsFont.loadFromFile("font/Lato/Lato-LightItalic.ttf"))
 		exit(0);
-	screen = game::Screen::START;
+	// screen = game::Screen::START;
 	score = 0;
 }
 
