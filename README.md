@@ -12,8 +12,6 @@ A classic Snake Game implementation in C++ using the SFML graphics library, with
 - [Rolling High Score](#rolling-high-score)
 - [ToDo](#todo)
 - [Building and Running](#building-and-running)
-- [Dependencies](#dependencies)
-- [License](#license)
 
 ## Overview
 
