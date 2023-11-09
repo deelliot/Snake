@@ -10,6 +10,7 @@ A classic Snake Game implementation in C++ using the SFML graphics library, with
 - [Game Modes](#game-modes)
 - [Pause Screen](#pause-screen)
 - [Rolling High Score](#rolling-high-score)
+- [ToDo](#todo)
 - [Building and Running](#building-and-running)
 - [Dependencies](#dependencies)
 - [License](#license)
@@ -28,27 +29,37 @@ The Snake Game is a timeless classic where players control a snake to eat food a
 
 ## Getting Started
 
-Clone the repository to your local machine and follow the building and running instructions in the next section.
+Clone the repository to your local machine. The project uses the [CMake SFML Project Template](https://github.com/SFML/cmake-sfml-project), which means you don't need to have SFML pre-installed unless you're a Linux user.
 
-## Game Modes
-
-The Snake Game offers three exciting game modes:
-
-1. **Classic Mode**: The traditional Snake Game experience. Eat food, grow longer, and try to achieve the highest score possible.
-
-2. **Time Attack Mode**: Test your skills against the clock. Race to eat as much food as possible within a limited time.
-
-3. **Obstacle Mode**: Navigate through a maze of obstacles while trying to grow your snake. Avoid collisions to survive and thrive.
+Follow the building and running instructions in the next section.
 
 ## Pause Screen
 
 Press the designated pause key during gameplay to pause the game and take a break. The pause screen provides options to resume the game or return to the main menu.
 
-## Rolling High Score
+## ToDo
 
-The game keeps track of your performance with a rolling high score. Your highest score achieved across all game modes is persistently displayed on the main menu.
+- **Implement the Different Game Modes**: As described below:
 
-Certainly! Here's an updated section with CMake and Make instructions:
+	## Game Modes
+
+	### Classic Mode
+
+	The traditional Snake Game experience. Eat food, grow longer, and try to achieve the highest score possible.
+
+	### Time Attack Mode
+
+	Test your skills against the clock. Race to eat as much food as possible within a limited time.
+
+	### Obstacle Mode
+
+	Navigate through a maze of obstacles while trying to grow your snake. Avoid collisions to survive and thrive.
+
+- **Rolling High Score Logic**:
+
+	## Rolling High Score
+
+	The game keeps track of your performance with a rolling high score. Your highest score achieved across all game modes is persistently displayed on the main menu.
 
 ## Building and Running
 
@@ -84,16 +95,4 @@ Run the game executable:
 ./build/bin/snake
 ```
 
-Note: Ensure that you have CMake and SFML installed on your system before running the build commands.
-
 Now, you're ready to enjoy the Snake Game! If you encounter any issues or have feedback, feel free to reach out to the developers.
-
-## Dependencies
-
-The Snake Game relies on the SFML graphics library. Ensure you have SFML installed on your system before building the game.
-
-## License
-
-The Snake Game is open-source and licensed under the MIT License. Feel free to explore, modify, and share the code. See the [LICENSE](LICENSE) file for more details.
-
-Enjoy playing the Snake Game! If you have any questions or feedback, please reach out to the developers.
