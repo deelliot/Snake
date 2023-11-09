@@ -95,4 +95,4 @@ Run the game executable:
 ./build/bin/snake
 ```
 
-Now, you're ready to enjoy the Snake Game! If you encounter any issues or have feedback, feel free to reach out to the developers.
+Now, you're ready to enjoy the Snake Game! If you encounter any issues or have feedback, feel free to reach out.
