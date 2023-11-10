@@ -14,6 +14,7 @@ namespace game
 			void drawPauseScreen();
 			void drawGameOver();
 			void changeScore();
+			void resetScore();
 			//Screen screen;
 
 

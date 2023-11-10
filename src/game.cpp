@@ -81,6 +81,7 @@ void game::Game::draw()
     switch(screen)
         {
             case game::START:
+                reset();
                 menu.drawStartScreen(mode);
                 break;
             case game::GAME:
@@ -105,7 +106,7 @@ void game::Game::update()
         if (snake.checkWindowCollision() || snake.checkBodyCollision())
         {
             screen = game::END;
-            snake.resetSnake();
+            //reset();
         }
         if (snake.checkCollision(food.getLocation()))
         {
@@ -115,4 +116,10 @@ void game::Game::update()
         }
         snake.updateSnake();
     }
+}
+
+void game::Game::reset()
+{
+    snake.resetSnake();
+    menu.resetScore();
 }

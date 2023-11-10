@@ -15,6 +15,11 @@ void game::Menu::changeScore()
 	score += 50;
 }
 
+void game::Menu::resetScore()
+{
+	score = 0;
+}
+
 void game::Menu::drawStartScreen(int mode)
 {
 	sf::RectangleShape border = createMenuBorder(sf::Color(44,67,23));
