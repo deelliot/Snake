@@ -13,7 +13,7 @@ namespace game
 			void drawGameScreen();
 			void drawPauseScreen();
 			void drawGameOver();
-			void changeScore();
+			void changeScore(float speed);
 			void resetScore();
 			//Screen screen;
 

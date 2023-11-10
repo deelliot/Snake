@@ -10,9 +10,9 @@ game::Menu::Menu(sf::RenderWindow *window)
 	score = 0;
 }
 
-void game::Menu::changeScore()
+void game::Menu::changeScore(float speed)
 {
-	score += 50;
+	score += 50 * (1 / speed * 100);
 }
 
 void game::Menu::resetScore()

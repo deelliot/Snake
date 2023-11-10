@@ -34,7 +34,7 @@ namespace game
 		Screen screen;
 		void handleInput(sf::Event::EventType eventType, int key);
 		Mode mode;
-		int speed;
+		float speed;
 	private:
 		sf::RenderWindow *window;
 		Snake snake;

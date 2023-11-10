@@ -65,13 +65,13 @@ void game::Game::setSpeed()
      switch(mode)
     {
         case game::EASY:
-            speed = 100;
+            speed = 100.f;
             break;
         case game::HARD:
-            speed = 50;
+            speed = 50.f;
             break;
         case game::PROGRESSIVE:
-            speed = 150;
+            speed = 150.f;
             break;
     }
 }
@@ -111,7 +111,7 @@ void game::Game::update()
         if (snake.checkCollision(food.getLocation()))
         {
             food.setRandomLocation();
-            menu.changeScore();
+            menu.changeScore(speed);
             snake.growSnake();
         }
         snake.updateSnake();
