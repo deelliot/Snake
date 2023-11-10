@@ -18,6 +18,13 @@ namespace game
 		END
 	};
 
+	enum Mode
+	{
+		EASY = 1,
+		HARD = 2,
+		PROGRESSIVE = 3
+	};
+
 	class Game
 	{
 	public:
@@ -26,12 +33,17 @@ namespace game
 		void update();
 		Screen screen;
 		void handleInput(sf::Event::EventType eventType, int key);
-
+		Mode mode;
+		int speed;
 	private:
 		sf::RenderWindow *window;
 		Snake snake;
 		Food food;
 		Menu menu;
+		int score;
+		void selectMode();
+		void setSpeed();
+		void changeScore();
 	};
 }
 

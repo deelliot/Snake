@@ -4,20 +4,12 @@
 
 namespace game
 {
-	// enum Screen
-	// {
-	// 	START,
-	// 	GAME,
-	// 	PAUSE,
-	// 	END
-	// };
-
 	class Menu
 	{
 		public:
 			Menu(){};
 			Menu(sf::RenderWindow *);
-			void drawStartScreen();
+			void drawStartScreen(int mode);
 			void drawGameScreen();
 			void drawPauseScreen();
 			void drawGameOver();
@@ -27,8 +19,7 @@ namespace game
 
 		private:
 			sf::RectangleShape createMenuBorder(sf::Color fillColor);
-			sf::RectangleShape createButtonBorder(sf::Color fillColor,
-				sf::Vector2f borderSize, sf::Vector2f position);
+			sf::RectangleShape createTextbox(sf::Text *textOption);
 			sf::Text createText(sf::Font &font, sf::String string, int size);
 			sf::RenderWindow *window;
 			sf::Font headerFont;

@@ -24,7 +24,7 @@ int main()
         if (clock.getElapsedTime() >= nextTickTime)
         {
             game.update();
-            nextTickTime = clock.getElapsedTime() + sf::milliseconds(50);
+            nextTickTime = clock.getElapsedTime() + sf::milliseconds(game.speed);
 
         }
         game.draw();
