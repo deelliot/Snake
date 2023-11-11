@@ -76,6 +76,11 @@ void game::Game::setSpeed()
     }
 }
 
+void game::Game::increaseSpeed()
+{
+    speed -= 5;
+}
+
 void game::Game::draw()
 {
     switch(screen)
@@ -106,13 +111,14 @@ void game::Game::update()
         if (snake.checkWindowCollision() || snake.checkBodyCollision())
         {
             screen = game::END;
-            //reset();
         }
         if (snake.checkCollision(food.getLocation()))
         {
             food.setRandomLocation();
             menu.changeScore(speed);
             snake.growSnake();
+            if (mode == PROGRESSIVE && speed > 10)
+                increaseSpeed();
         }
         snake.updateSnake();
     }

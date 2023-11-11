@@ -35,17 +35,17 @@ Follow the building and running instructions in the next section.
 
 ## Game Modes
 
-### Classic Mode
+### Snail Mode
 
 The traditional Snake Game experience. Eat food, grow longer, and try to achieve the highest score possible.
 
-### Time Attack Mode
+### Mamba Mode
 
-Test your skills against the clock. Race to eat as much food as possible within a limited time.
+Snail mode, but double time!
 
-### Obstacle Mode
+### Progressive Mode
 
-Navigate through a maze of obstacles while trying to grow your snake. Avoid collisions to survive and thrive.
+The game starts nice and slowly, but the speed increases each time you eat food, getting progressively more challenging.
 
 ## Pause Screen
 

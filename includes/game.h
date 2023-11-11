@@ -43,6 +43,7 @@ namespace game
 		int score;
 		void selectMode();
 		void setSpeed();
+		void increaseSpeed();
 		void reset();
 	};
 }
