@@ -15,7 +15,8 @@ namespace game
 		void drawSnake();
 		void growSnake();
 		void updateSnake();
-		bool checkCollision(sf::Vector2f foodLocation);
+		bool checkCollision(sf::Vector2f objectPosition);
+		bool checkFoodCollision(sf::RectangleShape food);
 		bool checkBodyCollision();
 		bool checkWindowCollision();
 		void setDirection(int x, int y);

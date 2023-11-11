@@ -6,6 +6,10 @@ game::Food::Food(sf::RenderWindow *window)
 	this->window = window;
 	srand(time(0));
 	setRandomLocation();
+	food = (setBox(location, foodColor));
+	food.setOrigin(food.getGlobalBounds().getSize() /
+		2.f + food.getLocalBounds().getPosition());
+	food.setRotation(0.f);
 }
 
 void game::Food::setRandomLocation()
@@ -17,8 +21,9 @@ void game::Food::setRandomLocation()
 	int yUpperLimit = floor((GAME_HEIGHT + HEIGHT_OFFSET) / SCALE);
 
 
-	location.x = randomNumber(xLowerLimit, xUpperLimit) * SCALE;
-	location.y = randomNumber(yLowerLimit, yUpperLimit) * SCALE;
+	location.x = randomNumber(xLowerLimit, xUpperLimit) * SCALE + SCALE/2;
+	location.y = randomNumber(yLowerLimit, yUpperLimit) * SCALE + SCALE/2;
+	food.setPosition(location);
 }
 
 /* returns a random number between the lowerLimit and the upperlimit*/
@@ -32,7 +37,8 @@ int game::Food::randomNumber(int lowerLimit, int upperLimit)
 
 void game::Food::drawFood()
 {
-	this->window->draw(setBox(location, foodColor));
+	food.rotate(10.f);
+	this->window->draw(food);
 }
 
 sf::Vector2f game::Food::getLocation()

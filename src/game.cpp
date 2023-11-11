@@ -112,7 +112,7 @@ void game::Game::update()
         {
             screen = game::END;
         }
-        if (snake.checkCollision(food.getLocation()))
+        if (snake.checkFoodCollision(food.food))
         {
             food.setRandomLocation();
             menu.changeScore(speed);

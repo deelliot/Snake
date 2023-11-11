@@ -62,6 +62,15 @@ void game::Snake::resetSnake()
 
 }
 
+bool game::Snake::checkFoodCollision(sf::RectangleShape food)
+{
+	sf::RectangleShape snakeHead;
+
+	snakeHead.setPosition(head);
+	snakeHead.setSize(sf::Vector2f(SCALE,SCALE));
+	return (snakeHead.getGlobalBounds().intersects(food.getGlobalBounds()));
+}
+
 bool game::Snake::checkCollision(sf::Vector2f objectPosition)
 {
 	sf::RectangleShape snakeHead;
