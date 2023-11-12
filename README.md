@@ -98,3 +98,14 @@ Run the game executable:
 Now, you're ready to enjoy the Snake Game! If you encounter any issues or have feedback, feel free to reach out to the developers.
 
 ## Screenshots
+
+<img width="797" alt="Start Screen" src="https://github.com/deelliot/Snake/assets/93197340/f70b9dc8-d1f6-43c6-b388-30ab39e7d23d">
+
+<img width="797" alt="Game Screen" src="https://github.com/deelliot/Snake/assets/93197340/1f6ed822-43f9-4484-be2b-5b8ea1556b9f">
+
+<img width="809" alt="Pause Screen" src="https://github.com/deelliot/Snake/assets/93197340/722dbd15-ca8a-4483-a75e-832803e588a0">
+
+<img width="808" alt="Game Over" src="https://github.com/deelliot/Snake/assets/93197340/5e7e6f52-14a1-4bcf-bbb2-7e41f18c555c">
+
+
+
