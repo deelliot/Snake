@@ -40,8 +40,3 @@ void game::Food::drawFood()
 	food.rotate(10.f);
 	this->window->draw(food);
 }
-
-sf::Vector2f game::Food::getLocation()
-{
-	return (location);
-}

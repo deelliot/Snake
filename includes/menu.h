@@ -15,6 +15,7 @@ namespace game
 			void drawGameOver();
 			void changeScore(float speed);
 			void resetScore();
+			void setHighScore();
 			//Screen screen;
 
 
@@ -26,6 +27,7 @@ namespace game
 			sf::Font headerFont;
 			sf::Font optionsFont;
 			int score;
+			int highscore;
 	};
 }
 

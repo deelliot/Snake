@@ -98,6 +98,7 @@ void game::Game::draw()
                 menu.drawPauseScreen();
                 break;
             default:
+                menu.setHighScore();
                 menu.drawGameOver();
                 break;
         }

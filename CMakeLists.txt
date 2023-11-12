@@ -11,7 +11,6 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 include_directories(snake/includes)
-#set(SOURCES src/main.cpp)
 file(GLOB SOURCES "src/*.cpp")
 
 add_executable(snake ${SOURCES})

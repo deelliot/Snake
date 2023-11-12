@@ -8,6 +8,7 @@ game::Menu::Menu(sf::RenderWindow *window)
 	if (!optionsFont.loadFromFile("font/Lato/Lato-LightItalic.ttf"))
 		exit(0);
 	score = 0;
+	highscore = 0;
 }
 
 void game::Menu::changeScore(float speed)
@@ -18,6 +19,12 @@ void game::Menu::changeScore(float speed)
 void game::Menu::resetScore()
 {
 	score = 0;
+}
+
+void game::Menu::setHighScore()
+{
+	if (score > highscore)
+		highscore = score;
 }
 
 void game::Menu::drawStartScreen(int mode)
@@ -115,6 +122,8 @@ void game::Menu::drawGameOver()
 	sf::Text restart = createText(optionsFont, "Press SPACE to restart", 40);
 	std::string scoreString = "Score: " + std::to_string(score);
 	sf::Text scoreBoard = createText(headerFont, scoreString, 40);
+	std::string highScoreString = "High Score: " + std::to_string(highscore);
+	sf::Text highScore = createText(headerFont, highScoreString, 40);
 
 	sf::Vector2f headerPosition = {(border.getPosition().x +
 		(border.getSize().x) / 2.f),(border.getPosition().y +
@@ -122,12 +131,14 @@ void game::Menu::drawGameOver()
 	header.setPosition(headerPosition);
 	restart.setPosition({headerPosition.x, headerPosition.y + 200});
 	scoreBoard.setPosition({headerPosition.x, headerPosition.y + 100});
+	highScore.setPosition({headerPosition.x, headerPosition.y + 150});
 
 	window->clear(sf::Color::Black);
 	window->draw(border);
 	window->draw(header);
 	window->draw(restart);
 	window->draw(scoreBoard);
+	window->draw(highScore);
 }
 
 sf::RectangleShape game::Menu::createMenuBorder(sf::Color fillColor)

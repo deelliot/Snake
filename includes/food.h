@@ -12,7 +12,6 @@ namespace game
 			Food(sf::RenderWindow *);
 			void drawFood();
 			void setRandomLocation();
-			sf::Vector2f getLocation();
 			sf::RectangleShape food;
 		private:
 			int randomNumber(int lowerLimit, int upperLimit);
