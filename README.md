@@ -12,6 +12,7 @@ A classic Snake Game implementation in C++ using the SFML graphics library, with
 - [Rolling High Score](#rolling-high-score)
 - [ToDo](#todo)
 - [Building and Running](#building-and-running)
+- [Screenshots](#screenshots)
 
 ## Overview
 
@@ -19,7 +20,7 @@ The Snake Game is a timeless classic where players control a snake to eat food a
 
 ## Features
 
-1. **Multiple Game Modes**: Choose from three different game modes, each with its own unique challenge and gameplay dynamics.
+1. **Multiple Game Modes**: Choose from three different game speeds.
 
 2. **Pause Screen**: Pause the game at any time to take a break or strategize your next move.
 
@@ -57,8 +58,8 @@ The game keeps track of your performance with a rolling high score. Your highest
 
 ## ToDo
 
-- **Implement the Different Game Modes**: As described above
-- **Implement Rolling High Score Logic**
+- **Add graphics to make it pretty :D
+- **Add a different food item that is only available for a set amount of time
 
 ## Building and Running
 
@@ -95,3 +96,5 @@ Run the game executable:
 ```
 
 Now, you're ready to enjoy the Snake Game! If you encounter any issues or have feedback, feel free to reach out to the developers.
+
+## Screenshots
