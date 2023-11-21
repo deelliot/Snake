@@ -98,8 +98,8 @@ void game::Game::draw()
             case game::GAME:
                 menu.drawGameScreen();
                 food.drawFood();
-                snake.drawSnake();
                 mouse.drawMouse(mouseImage);
+                snake.drawSnake();
                 break;
             case game::PAUSE:
                 menu.drawPauseScreen();
@@ -123,8 +123,8 @@ void game::Game::update()
         if (snake.checkFoodCollision(food.food))
         {
             food.count++;
-            if (food.count == 5)
-                mouse.enabled = true;
+            if (food.count % 5 == 0)
+                mouse.showMouse();
             food.setRandomLocation();
             menu.changeScore(speed);
             snake.growSnake();
@@ -133,12 +133,12 @@ void game::Game::update()
         }
         if (mouse.enabled && snake.checkFoodCollision(mouse.mouse))
         {
-            food.count = 0;
             mouse.setRandomLocation();
             menu.changeScore(200);
             snake.growSnake();
             mouse.enabled = false;
         }
+        mouse.update();
         snake.updateSnake();
     }
 }

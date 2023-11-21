@@ -8,6 +8,7 @@ game::Mouse::Mouse(sf::RenderWindow *window)
 	enabled = false;
 	mouse.setSize({40, 20});
 	mouse.setFillColor(sf::Color(174, 180, 203, 128));
+	mouseTimer = sf::seconds(3);
 }
 
 void game::Mouse::setRandomLocation()
@@ -40,3 +41,18 @@ void game::Mouse::drawMouse(sf::Texture mouseImage)
 		this->window->draw(mouse);
 	}
 }
+
+void game::Mouse::showMouse()
+{
+	enabled = true;
+	mouseTimer = clock.getElapsedTime() + sf::seconds(3);
+}
+
+void game::Mouse::update()
+{
+	if (clock.getElapsedTime() >= mouseTimer)
+	{
+		enabled = false;
+	}
+}
+

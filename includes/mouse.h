@@ -10,6 +10,8 @@ namespace game
 		public:
 			Mouse(){};
 			Mouse(sf::RenderWindow *);
+			void showMouse();
+			void update();
 			void drawMouse(sf::Texture mouseImage);
 			void setRandomLocation();
 			sf::RectangleShape mouse;
@@ -19,6 +21,8 @@ namespace game
 			sf::RenderWindow *window;
 			sf::Vector2f location;
 			sf::Color mouseColor;
+			sf::Time mouseTimer;
+			sf::Clock clock;
 	};
 }
 
