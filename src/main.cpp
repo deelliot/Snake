@@ -5,15 +5,16 @@ int main()
     auto window = sf::RenderWindow{ { WIDTH, HEIGHT }, "Snake", sf::Style::Default};
     window.setFramerateLimit(60);
     window.setKeyRepeatEnabled(false);
-    game::Game game(&window);
     sf::Clock clock;
+    game::Game game(&window);
     sf::Time nextTickTime = sf::milliseconds(100);
 
     while (window.isOpen())
     {
         for (auto event = sf::Event{}; window.pollEvent(event);)
         {
-            if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+            if (event.type == sf::Event::Closed ||
+                sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
             {
                 window.close();
             }

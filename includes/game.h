@@ -5,6 +5,7 @@
 #include "snake.h"
 #include "food.h"
 #include "menu.h"
+#include "mouse.h"
 
 
 
@@ -35,10 +36,14 @@ namespace game
 		void handleInput(sf::Event::EventType eventType, int key);
 		Mode mode;
 		float speed;
+		sf::Texture mouseImage;
+		sf::Time mouseTimer;
+		sf::Time elaspedTime;
 	private:
 		sf::RenderWindow *window;
 		Snake snake;
 		Food food;
+		Mouse mouse;
 		Menu menu;
 		int score;
 		void selectMode();

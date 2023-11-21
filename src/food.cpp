@@ -10,6 +10,7 @@ game::Food::Food(sf::RenderWindow *window)
 	food.setOrigin(food.getGlobalBounds().getSize() /
 		2.f + food.getLocalBounds().getPosition());
 	food.setRotation(0.f);
+	count = 0;
 }
 
 void game::Food::setRandomLocation()

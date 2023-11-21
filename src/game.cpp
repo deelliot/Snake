@@ -5,10 +5,18 @@ game::Game::Game(sf::RenderWindow *window)
 	this->window = window;
     snake = Snake(window);
     food = Food(window);
+    mouse = Mouse(window);
     menu = Menu(window);
     screen = game::Screen::START;
     mode = EASY;
     setSpeed();
+    if (!mouseImage.loadFromFile("assets/mouse.png"))
+	{
+			printf("unable to load texture/n");
+			exit(0);
+	}
+    mouseTimer = sf::seconds(3);
+    elaspedTime = sf::milliseconds(0);
 }
 
 void game::Game::handleInput(sf::Event::EventType eventType, int key)
@@ -93,6 +101,7 @@ void game::Game::draw()
                 menu.drawGameScreen();
                 food.drawFood();
                 snake.drawSnake();
+                mouse.drawMouse(mouseImage);
                 break;
             case game::PAUSE:
                 menu.drawPauseScreen();
@@ -115,11 +124,22 @@ void game::Game::update()
         }
         if (snake.checkFoodCollision(food.food))
         {
+            food.count++;
+            if (food.count == 5)
+                mouse.enabled = true;
             food.setRandomLocation();
             menu.changeScore(speed);
             snake.growSnake();
             if (mode == PROGRESSIVE && speed > 10)
                 increaseSpeed();
+        }
+        if (mouse.enabled && snake.checkFoodCollision(mouse.mouse))
+        {
+            food.count = 0;
+            mouse.setRandomLocation();
+            menu.changeScore(200);
+            snake.growSnake();
+            mouse.enabled = false;
         }
         snake.updateSnake();
     }
