@@ -15,8 +15,6 @@ game::Game::Game(sf::RenderWindow *window)
 			printf("unable to load texture/n");
 			exit(0);
 	}
-    mouseTimer = sf::seconds(3);
-    elaspedTime = sf::milliseconds(0);
 }
 
 void game::Game::handleInput(sf::Event::EventType eventType, int key)

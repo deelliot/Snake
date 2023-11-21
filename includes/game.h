@@ -37,8 +37,6 @@ namespace game
 		Mode mode;
 		float speed;
 		sf::Texture mouseImage;
-		sf::Time mouseTimer;
-		sf::Time elaspedTime;
 	private:
 		sf::RenderWindow *window;
 		Snake snake;
